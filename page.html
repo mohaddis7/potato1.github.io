@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block titleblock %} Blueprint | Potato Sowing {% endblock titleblock %}
+{% block styleCSS %}
+<style>
+
+    *{
+        margin: 0;
+        padding: 0%;
+        box-sizing: border-box;
+        font-size: 25px;
+        background-color: rgb(121, 202, 67);
+
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #title{
+        margin: 13%  auto;
+        margin-bottom: 5%;
+        font-weight: bold;
+
+
+    }
+    .Navbar {
+        color: black;
+        text-decoration: none;
+        list-style: none;
+    }
+
+    #name{
+        margin-top: 5%;
+        color: rgba(252, 5, 5, 0.781);
+    }
+</style>
+{% endblock  %}
+
+{% block bodyblock %}
+<!-- <img src="../IMG_0315.jpeg" alt="Blueprint Image" width="200" height="200"> -->
+<div class="container">
+<h1 id="title">Blueprint | Potato Sowing Data</h1>
+
+
+
+
+<a href="/index">Farm Data Before Sowing</a>
+<a href="/index2">Farm Data After Sowing</a>
+<a href="/search">Search Data </a>
+
+<h3 id="name">Owner : Khokhar Mahadisali</h3>
+
+</div>
+
+
+
+{% endblock %}

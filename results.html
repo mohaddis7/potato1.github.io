@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block titleblock %} Insert Data {% endblock titleblock %}
+{% block styleCSS %}
+<style>
+*{
+    font-weight: bold;
+}
+
+#result{
+    /* border: 2px solid black; */
+    margin: 0px auto;
+    text-align: center;
+    color: #ffffff  ;
+}
+
+#spacing{
+    margin: 20px;
+}
+    table,
+    th,
+    td {
+        {% comment %} margin: 5px; {% endcomment %}
+        {% comment %} padding: 10px 5px; {% endcomment %}
+        border: 0.7px solid black;
+    }
+
+
+    html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+</style>
+{% endblock styleCSS %} {% block bodyblock %}
+<div class="container container-fluid">
+    <h1 id="result">Results</h1>
+
+    <table>
+        <tr>
+            <th>Farm Name</th>
+            <th>Year</th>
+            <th>Urea</th>
+            <th>Potash</th>
+            <th>Sulphet</th>
+            <th>DAP</th>
+            <th>Extra</th>
+            <th>Notes</th>
+        </tr>
+        {% for i in ans %}
+        <tr>
+            <td>{{i.farmName}}</td>
+            <td>{{i.year}}</td>
+            <td>{{i.urea}}</td>
+            <td>{{i.potash}}</td>
+            <td>{{i.sulphet}}</td>
+
+            <td>{{i.dap}}</td>
+            <td>{{i.extra}}</td>
+            <td>{{i.notes}}</td>
+        </tr>
+        {% endfor %}
+
+        
+
+        <tr>
+            <th>Farm Name</th>
+            <th>Year</th>
+            <th>Number Of Days</th>
+            <th>Vigha</th>
+            <th>Sowing Date</th>
+            <th>DAS</th>
+            <th>Urea</th>
+            <th>Potash</th>
+            <th>Sulphet</th>
+            <th>Extra</th>
+            <th>Notes</th>
+        </tr>
+        {% for i in ans2 %}
+        <tr>
+            <td>{{i.farmName}}</td>
+            <td>{{i.year}}</td>
+            <td>{{i.noOfDays}}</td>
+            <td>{{i.vigha}}</td>
+            <td>{{i.sowingDate}}</td>
+
+            <td>{{i.das}}</td>
+            <td>{{i.urea}}</td>
+            <td>{{i.potash}}</td>
+            <td>{{i.sulphet}}</td>
+
+            <td>{{i.extra}}</td>
+            <td>{{i.notes}}</td>
+        </tr>
+
+
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock bodyblock %}
